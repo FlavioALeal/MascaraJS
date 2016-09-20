@@ -16,29 +16,6 @@ function mascara(m,t,e){
  	ii=0;
  	mm=0;
  	if(!livre){
- 		/*
- 		if(id!=8){
- 		t.value="";
-		 	for(i=0;i<l;i++){
-		 		pos = i + ii;
-		 		if(m.substr(mm,1) == "#"){									 			
-		 			t.value += texto.substr(pos,1);
-		 			if(m.substr(mm+1,1) != "#" && i<l){
-		 				t.value += m.substr(mm+1,1);
-		 				ii--;
-		 				if(id!=8 && !cursorfixo)cursor++;
-		 			}
-		 		}else if(m.substr(mm,1) != "#"){
-		 			if(mm==0){t.value += m.substr(mm,1) + texto.substr(i,1)};
-		 			if(mm>0){t.value += texto.substr(pos+1,1);ii++}
-			 		if(id!=8 && !cursorfixo)cursor++;
-			 		mm++;
-		 		}
-		 		mm++;
-		 	}
-		 	console.log("Pos="+pos+", L="+l+", MM="+mm);
-	 	}
-	 	*/
 	 	if(id!=8){
 		 	t.value="";
 		 	j=0;
