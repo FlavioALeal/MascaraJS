@@ -15,44 +15,60 @@
 	<h3>Para campos númericos, como Telefone, Celular, CPF, CNPJ, RG, etc...</h3>
 </div>
 <div class="row">
+	<div class="col-md-6">
 	 <form class="form-horizontal">
 	  <div class="form-group form-group">
-	    <label class="col-sm-2 control-label" for="formGroupInputSmall">CPF:</label>
-	    <div class="col-sm-3">
+	    <label class="col-sm-4 control-label" for="formGroupInputSmall">CPF:</label>
+	    <div class="col-sm-8">
 	      <input class="form-control" type="text" id="cpf" placeholder="###.###.###-##" onkeyup="mascara('###.###.###-##',this,event)" maxlength="14">
 	    </div>
 	  </div>
 	  <div class="form-group form-group">
-	    <label class="col-sm-2 control-label" for="formGroupInputSmall">Telefone:</label>
-	    <div class="col-sm-3">
-	      <input class="form-control" type="text" id="telefone" placeholder="(##)####.####" onkeyup="mascara('(##)####.####',this,event)" maxlength="13">
+	    <label class="col-sm-4 control-label" for="formGroupInputSmall">Telefone:</label>
+	    <div class="col-sm-8">
+	      <input class="form-control" type="text" id="telefone" placeholder="(##) ####-####" onkeyup="mascara('(##) ####-####',this,event)" maxlength="14">
 	    </div>
 	  </div>
 	  <div class="form-group form-group">
-	    <label class="col-sm-2 control-label" for="formGroupInputSmall">Celular:</label>
-	    <div class="col-sm-3">
+	    <label class="col-sm-4 control-label" for="formGroupInputSmall">Celular:</label>
+	    <div class="col-sm-8">
 	      <input class="form-control" type="text" id="celular" placeholder="(##)#####.####" onkeyup="mascara('(##)#####.####',this,event)" maxlength="14">
 	    </div>
 	  </div>
 	  <div class="form-group form-group">
-	    <label class="col-sm-2 control-label" for="formGroupInputSmall">RG:</label>
-	    <div class="col-sm-3">
+	    <label class="col-sm-4 control-label" for="formGroupInputSmall">RG:</label>
+	    <div class="col-sm-8">
 	      <input class="form-control" type="text" id="celular" placeholder="##.###.###-#" onkeyup="mascara('##.###.###-#',this,event)" maxlength="12">
 	    </div>
 	  </div>
 	<div class="form-group form-group">
-	    <label class="col-sm-2 control-label" for="formGroupInputSmall">CNPJ:</label>
-	    <div class="col-sm-3">
+	    <label class="col-sm-4 control-label" for="formGroupInputSmall">CNPJ:</label>
+	    <div class="col-sm-8">
 	      <input class="form-control" type="text" id="celular" placeholder="##.###.###/####-##" onkeyup="mascara('##.###.###/####-##',this,event)" maxlength="18">
 	    </div>
 	  </div>
 
 	  <div class="form-group form-group-sm text-center">
-	  		<div class="col-sm-6">
+	  		<div class="col-sm-12">
 			<button type="reset" type="button" class="btn btn-default"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Apagar</button>
 			</div>
 	  </div>
-</form>
+	  </div>
+	  <div class="col-md-6">
+	  		<h2 class="text-center">Como usar?</h2>
+	  		<p>
+	  		Para usar é muito simples, basta adicionar o script "mascara.js" no head do seu Html.
+	  		</p>
+	  		<p>No campo do formlário inclua:</p>
+	  		<div class="panel panel-default">
+			  <div class="panel-body text-center">
+			    <strong>onkeyup="mascara('(##)#####.####',this,event)"</strong>
+			  </div>
+			</div>
+			<p>Você pode formar as máscaras que quiser, onde aparece o caracter <strong>#</strong> será substituido pelo número digitado pelo usuário. Os outros símbolos aparecerão como você colocou nas máscara.</p>
+			<p>Veja os exemplos!</p>
+	  </div>
+	</form>
 </div>
 </div>
  </form>

@@ -2,7 +2,8 @@ function mascara(m,t,e){
 	var cursor = t.selectionStart;
 	var texto = t.value;
 	texto = texto.replace(/\D/g,'');
-	var l = t.value.length;
+	var l = texto.length;
+	var lm = m.length;
 	if(window.event) {                  
 	    id = e.keyCode;
 	} else if(e.which){                 
@@ -15,6 +16,7 @@ function mascara(m,t,e){
  	ii=0;
  	mm=0;
  	if(!livre){
+ 		/*
  		if(id!=8){
  		t.value="";
 		 	for(i=0;i<l;i++){
@@ -26,19 +28,32 @@ function mascara(m,t,e){
 		 				ii--;
 		 				if(id!=8 && !cursorfixo)cursor++;
 		 			}
-		 		}else if(m.substr(i,1) != "#" && i == 0){
-		 			t.value += m.substr(0,1) + texto.substr(0,1);
+		 		}else if(m.substr(mm,1) != "#"){
+		 			if(mm==0){t.value += m.substr(mm,1) + texto.substr(i,1)};
+		 			if(mm>0){t.value += texto.substr(pos+1,1);ii++}
 			 		if(id!=8 && !cursorfixo)cursor++;
 			 		mm++;
-		 		}else if(m.substr(i,1) != "#"){
-		 			//t.value += texto.substr(pos,1);
-			 		//if(id!=8 && !cursorfixo)cursor++;
 		 		}
 		 		mm++;
 		 	}
+		 	console.log("Pos="+pos+", L="+l+", MM="+mm);
+	 	}
+	 	*/
+	 	if(id!=8){
+		 	t.value="";
+		 	j=0;
+		 	for(i=0;i<lm;i++){
+		 		if(m.substr(i,1)=="#"){
+		 			t.value+=texto.substr(j,1);
+		 			j++;
+		 		}else if(m.substr(i,1)!="#"){
+		 			t.value+=m.substr(i,1);
+		 		}
+		 		if(id!=8 && !cursorfixo)cursor++;
+		 		if((j)==l+1)break;
+		 	}
 	 	}
  	}
-
  	if(cursorfixo && !livre)cursor--;
  	t.setSelectionRange(cursor, cursor);
-	}
+}
