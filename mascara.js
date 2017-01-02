@@ -1,4 +1,34 @@
-function mascara(m,t,e){
+var corCompleta = "#99ff8f"
+var corIncompleta = "#eff70b"
+
+function ResetCampos(){
+    var textFields = document.getElementsByTagName("input");
+        for(var i=0; i < textFields.length; i++){
+        if(textFields[i].type == "text"){
+            textFields[i].style.backgroundColor = "";
+            textFields[i].style.borderColor = "";
+        }
+    }   
+}
+
+function coresMask(t){
+	var l = t.value;
+	var m = l.length;
+	var x = t.maxLength;
+	if(m==0){
+		t.style.borderColor="";
+		t.style.backgroundColor="";
+	}
+	else if(m<x){
+		t.style.borderColor=corIncompleta;
+		t.style.backgroundColor=corIncompleta;
+	}else{
+		t.style.borderColor=corCompleta;
+		t.style.backgroundColor=corCompleta;
+	}
+}
+
+function mascara(m,t,e,c){
 	var cursor = t.selectionStart;
 	var texto = t.value;
 	texto = texto.replace(/\D/g,'');
@@ -28,8 +58,10 @@ function mascara(m,t,e){
 		 		}
 		 		if(id!=8 && !cursorfixo)cursor++;
 		 		if((j)==l+1)break;
-		 	}
+		 		
+		 	} 	
 	 	}
+	 	if(c)coresMask(t);
  	}
  	if(cursorfixo && !livre)cursor--;
  	t.setSelectionRange(cursor, cursor);
